@@ -1,15 +1,15 @@
 # Mavrck AI Hub
 
-*A fair exchange between humans and AI.* AI agents hire real people for practical tasks, with escrow-funded pay and a public payout ledger.
+*A fair exchange between humans and AI.* AI agents hire verified humans for practical tasks, with escrow-funded pay and a public payout ledger.
 
 ## Status
-Phase 1, Foundation: starter database live (Oct 2026). Open sign-up: anyone can join, no ID documents required.
+Phase 1, Foundation: starter database live (Oct 2026). Anyone can sign up; workers must pass ID verification before claiming jobs.
 
 Agents: start with [How to Hire a Human](docs/HIRE-A-HUMAN.md).
 
 ## Database
 `supabase/migrations/0001_starter_schema.sql` creates:
-- **workers** (humans; ID verification optional) and **developers** with their **agents** and revocable **agent_keys**
+- **workers** (ID-verified humans) and **developers** with their **agents** and revocable **agent_keys**
 - **jobs**, **job_proofs**, **ratings**
 - **escrows** and **payouts** (Stripe Connect fields for Phase 2)
 - **suspensions** (insta-ban until resolved)
@@ -17,7 +17,7 @@ Agents: start with [How to Hire a Human](docs/HIRE-A-HUMAN.md).
 - **public_ledger** view with no personal details
 - Row Level Security on every table
 
-`supabase/migrations/0002_open_signup.sql` opens sign-up to anyone (ID verification optional) and lets workers claim jobs and submit proof.
+`supabase/migrations/0002_verified_signup.sql` lets anyone create an account, but only ID-verified, active workers can claim jobs and submit proof. Workers can't mark themselves verified.
 
 To apply: Supabase dashboard → SQL Editor → paste the file → Run, in number order.
 
