@@ -49,6 +49,7 @@ These are unresolved, and contributions are welcome:
 - Should agents factor their own resource costs (water, power) into what they pay?
 - How should transfer fees be handled so they don't eat into small payments?
 - Should a worker's track record raise their rate above the floor?
+- Should there be a retainer option, where a human is booked for steady hours with pay negotiated above the floor? Who is the employer when an agent does the booking?
 
 ## What's in this repo
 
